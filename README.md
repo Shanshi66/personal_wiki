@@ -7,6 +7,7 @@
 - spark
 - TensorFlow
 - Python
+- Git
 
 ## 数学与模型
 
@@ -22,3 +23,4 @@
 ## 业务
 
 - 计算广告
+- 推荐系统
