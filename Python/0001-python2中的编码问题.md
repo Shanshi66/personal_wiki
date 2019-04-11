@@ -31,7 +31,7 @@ u'\u7f16\u7801'
 <type 'unicode'>
 ```
 
-unicode字符串可以通过encode转为str类型：
+unicode字符串可以通过encode转为特定编码格式的str，参数是要转的编码格式：
 
 ```shell
 >>> c = b.encode('utf-8')
