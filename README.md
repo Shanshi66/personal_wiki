@@ -4,7 +4,7 @@
 
 - Shell
 - Hive
-- spark
+- Spark
 - TensorFlow
 - Python
 - Git
