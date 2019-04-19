@@ -8,3 +8,5 @@
 - [ ] tf.train.get_or_create_global_step()是什么
 - [ ] tf.train.Checkpoint()保存的时候key：value参数里的key是自己定的吗？还是内置了一些？
 - [ ] tfe.metrics有什么用？
+- [ ] 0016不懂
+- [ ] backtracking line search https://tensorflow.google.cn/guide/eager
