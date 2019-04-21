@@ -19,8 +19,8 @@
 
 2. iterm2新建profile，使用expect执行login.sh
 
-   ![新建profile](img/0028-1.png)
+   ![新建profile](img/0001-1.png)
 
-3. 点击profile，点击dev，登录，美滋滋
+3. 点击菜单栏profile，点击dev，登录，美滋滋
 
    
