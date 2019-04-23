@@ -10,3 +10,4 @@
 - [ ] tfe.metrics有什么用？
 - [ ] 0016不懂
 - [ ] backtracking line search https://tensorflow.google.cn/guide/eager
+- [ ] dataset.flat_map
