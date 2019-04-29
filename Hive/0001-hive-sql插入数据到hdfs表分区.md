@@ -1,0 +1,16 @@
+# hive sql插入数据到hdfs表分区
+
+```sql
+INSERT OVERWRITE TABLE <OUTPUT_TABLENAME>
+PARTITION (PART1 = <PART_NAME_1>, PART2, PART3)
+SELECT 
+    <filed_1>, 
+    <filed_2>, 
+    PART2,
+    PART3
+FROM <INPUT_TABLENAME>
+WHERE <CONDITION>
+GROUP BY PART2, PART3, other filed
+```
+
+select语句中PART2和PART3的顺序要和PARTITION中的顺序一致
