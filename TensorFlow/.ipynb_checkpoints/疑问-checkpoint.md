@@ -13,5 +13,6 @@
 - [ ] dataset.flat_map
 - [ ] 不同iterator的好处是什么,例子
 - [x] 0021，为什么要加repeat? range返回的是一个生成器，repeat是指把0~100复制无限遍。如果不加，后面迭代200次会报错。
+- [ ] 0023, save的时候报segmentation fault
     
     
