@@ -11,4 +11,3 @@ select s.ymd, s.symbol, s.price_close
 from stocks s
 sort by s.ymd asc, s.symbol desc
 ```
-
