@@ -2,7 +2,7 @@
 
 ```shell
 git rebase master # first
-fix config # second if needed
+fix conflits # second if needed
 git add # third
 git rebase --continue / --abort # final
 ```
