@@ -41,4 +41,4 @@
     [source.ustc]
     registry = "git://mirrors.ustc.edu.cn/crates.io-index"
     ```
-2. 
+2. 下载依赖的时候遇到`Blocking waiting for file lock on package cache`问题，解决方法：删掉`~/.cargo/.package-cache`
