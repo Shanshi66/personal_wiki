@@ -45,6 +45,79 @@ print(tensor_list)
 # [<tf.Tensor 'x:0' shape=() dtype=float32>]
 ```
 
+## autograph过程
+
+```python
+import tensorflow as tf
+import numpy as np 
+
+@tf.function(autograph=True)
+def myadd(a,b):
+    for i in tf.range(3):
+        tf.print(i)
+    c = a+b
+    print("tracing") # 不是tf.print
+    return c
+
+myadd(tf.constant("hello"),tf.constant("world"))
+# =>
+# tracing
+# 0
+# 1
+# 2
+
+myadd(tf.constant("good"),tf.constant("luck")) 
+# => 不会输出tracing
+# 0
+# 1
+# 2
+
+myadd(tf.constant(1),tf.constant(2))
+# =>
+# tracing 又有了
+# 0
+# 1
+# 2
+
+myadd(1, 2)
+# =>
+# tracing 又有了
+# 0
+# 1
+# 2
+
+myadd(1, 2)
+# =>
+# tracing 还是有
+# 0
+# 1
+# 2
+
+@tf.function(autograph=True)
+def myadd(a,b):
+    for i in tf.range(3):
+        tf.print(i)
+    c = a+b
+    tf.print("tracing") # !!
+    return c
+
+myadd(tf.constant("hello"),tf.constant("world"))
+# =>
+# 0
+# 1
+# 2
+# tracing
+
+```
+
+autograph执行过程：
+1. 先执行python代码，创建计算图，因此python代码中的输出会先打印。
+   1. 函数里tf的算子会加到计算图里，因此最好都使用tf算子。
+   2. 不同类型的输入，会重新建图。如果传入的参数不是tensor，每次都会创建计算图
+   3. 创建变量只会在创建计算图的时候执行一次，因此不要在函数内定义变量
+   4. python的数据结构如list、dict不会传给C++代码创建的计算图，因此不要修改python代码的外部数据结构
+2. 执行计算图，计算图创建好之后，将不会执行python代码
+
 
 
 
