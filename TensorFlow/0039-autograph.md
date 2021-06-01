@@ -119,5 +119,32 @@ autograph执行过程：
 2. 执行计算图，计算图创建好之后，将不会执行python代码
 
 
+## tensorboard追踪
+
+```python
+import datetime
+
+# 创建日志
+stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+logdir = './data/demomodule/%s' % stamp
+writer = tf.summary.create_file_writer(logdir)
+
+#开启autograph跟踪
+tf.summary.trace_on(graph=True, profiler=True) 
+
+#执行autograph
+demo = DemoModule(init_value = tf.constant(0.0))
+result = demo.addprint(tf.constant(5.0))
+
+#将计算图信息写入日志
+with writer.as_default():
+    tf.summary.trace_export(
+        name="demomodule",
+        step=0,
+        profiler_outdir=logdir)
+```
+
+
+
 
 
