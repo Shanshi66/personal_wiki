@@ -240,4 +240,38 @@ ds = tf.data.Dataset.range(12)
 ds_window = ds.window(3, shift=1).flat_map(lambda x: x.batch(3,drop_remainder=True))
 for x in ds_window:
     print(x)
+
+# shuffle: 数据顺序洗牌
+ds = tf.data.Dataset.range(12)
+ds_shuffle = ds.shuffle(buffer_size = 5)
+
+# repeat: 重复数据若干次，不带参数时，重复无数次。
+ds = tf.data.Dataset.range(3)
+ds_repeat = ds.repeat(3)
+
+# shard: 采样，从某个位置开始隔固定距离采样一个元素。
+ds = tf.data.Dataset.range(12)
+ds_shard = ds.shard(3,index = 1)
+
+# take:采样，从开始位置取前几个元素
+ds = tf.data.Dataset.range(12)
+ds_take = ds.take(3)
+
 ```
+
+## 提升管道性能
+
+训练深度学习模型常常会非常耗时。
+
+模型训练的耗时主要来自于两个部分，一部分来自数据准备，另一部分来自参数迭代。
+
+参数迭代过程的耗时通常依赖于GPU来提升。
+
+而数据准备过程的耗时则可以通过构建高效的数据管道进行提升。
+
+以下是一些构建高效数据管道的建议:
+1. 使用 prefetch 方法让数据准备和参数迭代两个过程相互并行。
+2. 使用 interleave 方法可以让数据读取过程多进程执行,并将不同来源数据夹在一起。
+3. 使用 map 时设置num_parallel_calls 让数据转换过程多进行执行。
+4. 使用 cache 方法让数据在第一个epoch后缓存到内存中，仅限于数据集不大情形。
+5. 使用 map转换时，先batch, 然后采用向量化的转换方法对每个batch进行转换。
