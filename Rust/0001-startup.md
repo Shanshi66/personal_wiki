@@ -18,8 +18,8 @@
 ## 常用命令
 
 1. `rustup update`rust更新
-2. `cargo build`构建，默认是debug模式，`cargo build --release`是release模式
-3. `cargo run`运行
+2. `cargo build`编译，默认是debug模式，`cargo build --release`是release模式
+3. `cargo run`编译+运行，`cargo run --release`
 4. `cargo test`测试
 5. `cargo doc`生成文档
 6. `cargo publish`发布libary到cargo.io
