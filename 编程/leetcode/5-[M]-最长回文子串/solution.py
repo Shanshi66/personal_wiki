@@ -1,5 +1,6 @@
 from numpy import mirr
 
+# 马拉车：在字符之间填充#，使得所有字符串长度都是奇数。记录能识别到的最右边界maxRight，及对应的center。遍历每一个字符，考虑center左边对称位置的回文串臂长，如果当前位置+臂长没有超过maxRight，直接继承计算结果，否则从maxRight开始逐步向外扩展，更新maxRight和center。
 
 class Solution:
     def expand(self, new_s, i, j):
@@ -14,6 +15,7 @@ class Solution:
         new_s = '#'+'#'.join(list(s))+'#'
         p = [0]*len(new_s)
         p[1] = 1
+        start, end = 0, 0
         for i in range(1, len(new_s)):
             mirror = 2*center-i
             if i > max_right:
@@ -26,21 +28,10 @@ class Solution:
                 max_right = self.expand(new_s, i-(max_right-i), max_right)
                 center = i
                 p[i] = max_right-i
-        max_idx = 0
-        max_arm = p[0]
-        for i in range(1, len(p)):
-            if p[i] > max_arm:
-                max_arm = p[i]
-                max_idx = i
-        start_idx = max_idx-max_arm
-        end_idx = max_idx+max_arm
-        if new_s[start_idx] == '#':
-            start_idx = start_idx//2
-            end_idx = (end_idx-1)//2
-        else:
-            start_idx = start_idx//2
-            end_idx = end_idx//2
-        return s[start_idx:end_idx+1]
+            if 2*p[i] > end-start:
+                start = i-p[i]
+                end = i+p[i]
+        return new_s[start+1:end+1:2]
 
 
 if __name__ == '__main__':
@@ -51,5 +42,6 @@ if __name__ == '__main__':
     print(test.longestPalindrome("cbbd"))
     print(test.longestPalindrome("c"))
     print(test.longestPalindrome("bddb"))
+    print(test.longestPalindrome("babadada"))
 
 
