@@ -1,3 +1,5 @@
+# 想到N>500，返回1，就是简单dp
+
 class Solution:
     def soupServings(self, n: int) -> float:
         N = (n//25)+1 if n%25 > 0 else n//25
