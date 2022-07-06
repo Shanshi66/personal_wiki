@@ -1,4 +1,8 @@
+import functools
+
+
 class Solution:
+    @functools.lru_cache(None)
     def solve(self, s1, s2, s3, i, j, k, flag):
         if i == len(s1) and j == len(s2) and k == len(s3):
             return True
