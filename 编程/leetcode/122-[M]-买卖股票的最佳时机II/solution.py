@@ -23,6 +23,53 @@ class Solution:
         return max_result
 
 
+# 官方思路：dp[i][0]表示第i天当前手上没股票的最大收益，dp[i][1]表示第i天当前手上有股票的最大收益，逻辑更顺。
+
+# class Solution {
+# public:
+#     int maxProfit(vector<int>& prices) {
+#         int n = prices.size();
+#         int dp[n][2];
+#         dp[0][0] = 0, dp[0][1] = -prices[0];
+#         for (int i = 1; i < n; ++i) {
+#             dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+#             dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
+#         }
+#         return dp[n - 1][0];
+#     }
+# };
+
+# 状态压缩
+# class Solution {
+# public:
+#     int maxProfit(vector<int>& prices) {
+#         int n = prices.size();
+#         int dp0 = 0, dp1 = -prices[0];
+#         for (int i = 1; i < n; ++i) {
+#             int newDp0 = max(dp0, dp1 + prices[i]);
+#             int newDp1 = max(dp1, dp0 - prices[i]);
+#             dp0 = newDp0;
+#             dp1 = newDp1;
+#         }
+#         return dp0;
+#     }
+# };
+
+# 思路三：贪心，找到n个不想交区间，使得sum(ri,li)=(ri,ri-1)+(ri-1,ri-2)+...+(li+1, li)最大，可以转换成找x个长度为1的区间，使价值最大。遍历每个相邻区间，取收益大于0的即可。
+# class Solution {
+# public:
+#     int maxProfit(vector<int>& prices) {   
+#         int ans = 0;
+#         int n = prices.size();
+#         for (int i = 1; i < n; ++i) {
+#             ans += max(0, prices[i] - prices[i - 1]);
+#         }
+#         return ans;
+#     }
+# };
+
+
+
 if __name__ == '__main__':
     test = Solution()
     print(test.maxProfit([7,1,5,3,6,4]))
