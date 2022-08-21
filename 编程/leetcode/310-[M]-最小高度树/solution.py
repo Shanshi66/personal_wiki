@@ -50,6 +50,7 @@ class Solution:
 
 # 也可以先找出最长路径，再取路径中点
 # 求最长路径的方法：以任意顶点p出发，找距离最远的顶点x，以x出发，找距离x最远的顶点y，xy为最长路径
+# 证明：https://oi-wiki.org/graph/tree-diameter/
 
 if __name__ == '__main__':
     test = Solution()
