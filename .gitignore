@@ -2,3 +2,4 @@ log.txt
 .DS_Store
 model
 tf-model
+*.exe
