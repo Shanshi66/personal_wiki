@@ -1,6 +1,10 @@
 from tracemalloc import start
 
 
+
+# 思路：dp[i][j]表示花费j+1步移动到第i个坐标的方法数量
+# 提前对坐标进行归一化
+
 class Solution:
     def numberOfWays(self, startPos: int, endPos: int, k: int) -> int:
         if endPos-startPos > k:

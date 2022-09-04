@@ -1,5 +1,6 @@
 from typing import List
 
+# 思路：暴力搜索
 
 class Solution:
 
