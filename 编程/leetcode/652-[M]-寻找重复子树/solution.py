@@ -29,6 +29,7 @@ class Solution:
 
 
 # 思路：使用(root.val, l, r)三元组序列化二叉树，其中l是左子树第一次出现序号，r是右子树第一次出现的序号。不难发现，如果l、r都重复，那么l、r必定被标记，这是如果root.val也相同，那么子树一定是重复的。
+# 所有子树一定包含叶子节点，从叶子节点开始编码
 
 class Solution:
     def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> List[Optional[TreeNode]]:
