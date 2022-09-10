@@ -10,11 +10,7 @@ class Node():
         self.sum_val = 0
         self.max_val = 0
 
-
-
-
 class Solution:
-
     def build_tree(self, chargeTime, runningCost, cur, l, r):
         self.tree[cur].l, self.tree[cur].r = l, r
         if l == r:
@@ -25,7 +21,7 @@ class Solution:
             self.build_tree(chargeTime, runningCost, cur*2, l, mid)
             self.build_tree(chargeTime, runningCost, cur*2+1, mid+1, r)
             self.tree[cur].max_val = max(self.tree[cur*2].max_val, self.tree[cur*2+1].max_val)
-            self.tree[cur].sum_val = max(self.tree[cur*2].sum_val, self.tree[cur*2+1].sum_val)
+            self.tree[cur].sum_val = self.tree[cur*2].sum_val+self.tree[cur*2+1].sum_val
 
     def tree_find(self, cur, l, r):
         if self.tree[cur].l == l and self.tree[cur].r == r:
