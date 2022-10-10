@@ -28,3 +28,8 @@
 ## 引申
 
 在某些层加入随机扰动是一类方法，也可以加其他噪声，比如$N(0,\sigma^2)$，每一层的输出$x'=x+\epsilon$，$E(x')=x$
+
+## 参考
+
+1. http://zh.d2l.ai/chapter_multilayer-perceptrons/dropout.html?highlight=dropout
+2. https://zhuanlan.zhihu.com/p/38200980
