@@ -24,3 +24,7 @@
 3. Hard negtive，损失不为0，模型有优化空间
 
 ![](./img/0003-4.jpeg)
+
+## 参考
+
+1. https://zhuanlan.zhihu.com/p/158853633
