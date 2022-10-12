@@ -54,3 +54,10 @@ $\alpha$通常取较大的数，如0.9
 
 ![](./img/0005-7.jpeg)
 
+## 缺点
+
+1. batch_size小的时候效果差，样本均值和方差估计不准
+2. 无法用于RNN。同一个batch中的sequence长度可能不一样，按batch维度来计算均值、方差是不准确的，因为有的为空。另外，即使可以使用，需要保存每个时间步的均值、方差，比较麻烦。RNN使用Layer Normalization代替，LayerNormalization是在样本维度做归一化。
+
+
+
