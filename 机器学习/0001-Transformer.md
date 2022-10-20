@@ -33,6 +33,7 @@ CNN的问题：如果两个词距离很远，需要很深的网络才能学到�
 ![](img/0001-2.png)
 
 **Scaled Dot-Product Attention:**
+
 ![](img/0001-3.png)
 
 其中$Q \in (n, d_k), K \in (m, d_k), QK^T \in (n, m)$，n为key的数量，m为value的数量，$V \in (m, d_v)$，最终结果形状为$(n, d_v)$。
@@ -40,7 +41,12 @@ CNN的问题：如果两个词距离很远，需要很深的网络才能学到�
 为什么除$\sqrt{d_k}$
 > 当向量长度很大的时候，点积会比较大，softmax会接近1，导致梯度非常小
 
+为什么不用加法attention？
+> 点乘计算更快，更节省空间。因为加法注意力使用mlp来计算注意力权重，需要额外矩阵和加法操作。
+> ![](img/0001-9.png)
+
 **Multi-Head Attention**
+
 ![](img/0001-4.png)
 
 出发点：借鉴CNN多通道feature map的思想，通过将Q、K、V投影到多个低维空间，希望模型能够学到更丰富信息。
@@ -82,6 +88,7 @@ MLP对每个词上进行，先讲$d_{model}$维的向量投影到$d_{ff}$维空�
 ### 优化器
 
 实际训练采用Adam优化器，学习率规划
+
 ![](img/0001-7.png)
 
 前warmup_steps，学习率随着step_num增加而增加。后面随着step_num增加而减小
