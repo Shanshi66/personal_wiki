@@ -11,3 +11,4 @@ class Solution:
             if item[idx] == ruleValue:
                 cnt += 1
         return cnt
+
