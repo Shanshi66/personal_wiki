@@ -133,4 +133,9 @@ $$
 
 
 
+## 参考
 
+1. https://leimao.github.io/article/Noise-Contrastive-Estimation/
+2. [A Fast and Simple Algorithm for Training Neural probabilistic Language Models](https://arxiv.org/pdf/1206.6426.pdf)
+3. [Learning word embeddings efficiently with noise-contrastive estimation](https://papers.nips.cc/paper/2013/hash/db2b4182156b2f1f817860ac9f409ad7-Abstract.html)
+4. [Notes on Noise Contrastive Estimation and Negative Sampling](https://arxiv.org/pdf/1410.8251.pdf%EF%BC%89)

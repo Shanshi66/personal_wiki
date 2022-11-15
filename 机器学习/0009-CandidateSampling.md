@@ -26,14 +26,14 @@ Candidate sampling方法最初出现在NLP word embedding任务中，原始softm
 
 ## Noise Constrastive Estimation (NCE)
 
-
+[NCE笔记](0011-NCE_loss.md)
 
 ## Negative Sampling
 
+[Negative Sampling笔记](0012-Negative_sampling_loss.md)
 ## Sampled softmax
 
-
-
+[Sampled Softmax笔记](0012-Negative_sampling_loss.md)
 
 
 ## 参考
