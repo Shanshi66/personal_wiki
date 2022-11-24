@@ -3,3 +3,5 @@ log.txt
 model
 tf-model
 *.exe
+*.dSYM
+.vscode
