@@ -3,6 +3,8 @@
 #include<queue>
 #include<tuple>
 #include<iostream>
+#include<unordered_map>
+#include<stack>
 
 // 思路：维护一个<num，num出现次数，num最靠栈顶的位置>的堆，单独维护num出现次数，num出现位置的map
 // 每次push，将出现次数+1，最新位置压入堆（会有重复，但不影响）
@@ -60,6 +62,35 @@ public:
         }
         return val;
     }
+};
+
+//官方思路：对每个频次分别建一个栈，每次优先弹最高频次的栈，最高频次的栈弹完之后，再弹下一个栈
+class FreqStack1 {
+public:
+    FreqStack1() {
+        maxFreq = 0;
+    }
+
+    void push(int val) {
+        freq[val]++;
+        group[freq[val]].push(val);
+        maxFreq = max(maxFreq, freq[val]);
+    }
+
+    int pop() {
+        int val = group[maxFreq].top();
+        freq[val]--;
+        group[maxFreq].pop();
+        if (group[maxFreq].empty()) {
+            maxFreq--;
+        }
+        return val;
+    }
+
+private:
+    unordered_map<int, int> freq;
+    unordered_map<int, stack<int>> group;
+    int maxFreq;
 };
 
 int test_case1(){
