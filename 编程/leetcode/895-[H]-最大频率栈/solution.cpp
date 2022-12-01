@@ -9,7 +9,7 @@
 // 思路：维护一个<num，num出现次数，num最靠栈顶的位置>的堆，单独维护num出现次数，num出现位置的map
 // 每次push，将出现次数+1，最新位置压入堆（会有重复，但不影响）
 // 每次pop，如果有重复，都弹出堆。将次数-1，最靠顶的位置弹出。将新的元组压入堆。
-// 时间复杂度：push O(1)，pop(1)
+// 时间复杂度：push O(logN)，pop(logN)
 
 using namespace std;
 using tuple_type = tuple<int, int, int>;
