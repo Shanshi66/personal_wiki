@@ -4,3 +4,6 @@
 
 ![](img/0015-1.png)
 
+## 参考
+
+1. [Momentum Contrast for Unsupervised Visual Representation Learning](https://arxiv.org/abs/1911.05722)
