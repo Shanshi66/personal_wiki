@@ -63,3 +63,17 @@ after training on several million examples.
 高频词采样在生成训练样本的时候进行，参考
 
 https://wuwt.me/2019/04/15/word2vector-2019/
+
+## 其他
+
+### CBOW与Skip-gram对比
+
+通过上下文预测中心词
+![](img/0001-7.png)
+
+cbow训练快。skip-gram训练更充分，对生僻词好。
+
+对与每个中心词来说，cbow只会学习一次，对于skip-gram来说，会学习K次。skip-gram学习会更充分。
+
+当上线文中有生僻词的时候，cbow的梯度会分散到上下文中，生僻词的学习效率低。skip-gram对每个词单独学习。
+
