@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "41fa8e6f0241f74d",
+        "id": "12777119c29a74a7",
         "type": "tabs",
         "children": [
           {
-            "id": "b184c25f4b1cd631",
+            "id": "90d2c96f7e1c10f5",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -81,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "编程/基础知识/img/0001-1.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/基础知识/img/0001-1.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -120,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "编程/基础知识/img/0001-1.png"
-              }
+              "state": {}
             }
           }
         ]
@@ -132,8 +128,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "fb0930cab55bc825",
+  "active": "90d2c96f7e1c10f5",
   "lastOpenFiles": [
+    "编程/C++/0022-虚函数.md",
+    "编程/C++/0003-GDB调试-调试多线程.md",
     "编程/C++/0009-编译预处理.md",
     "2022-12-19.md",
     "编程/C++/0017-static.md",
