@@ -5,3 +5,4 @@ tf-model
 *.exe
 *.dSYM
 .vscode
+.obsidian
