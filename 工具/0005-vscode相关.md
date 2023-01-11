@@ -33,3 +33,11 @@ ProxyCommand ssh host2 -W %h:%p ## 使用host2作为跳板机
 `export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"`
 
 使用code命令即可打开文件
+
+# 好用的插件
+1. rust_analyzer：rust实时编译分析
+2. rust_syntax：rust代码高亮
+3. crates：rust依赖管理
+4. better toml：toml文件语法高亮
+5. rust test lens：快速运行rust测试
+6. Tabnine：AI自动补全
