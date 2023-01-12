@@ -42,3 +42,29 @@
     registry = "git://mirrors.ustc.edu.cn/crates.io-index"
     ```
 2. 下载依赖的时候遇到`Blocking waiting for file lock on package cache`问题，解决方法：删掉`~/.cargo/.package-cache`
+
+# 常用库
+
+## 命令行
+
+1. clap：命令行解析
+2. colored：命令行多彩显示
+
+## web
+
+1. reqwest：类似于python中的request，处理http
+
+## 错误处理
+
+1. anyhow
+
+## 格式化
+
+1. jsonxf：格式化json
+2. mime：处理mime类型
+
+## 性能
+
+1. tokio：异步处理
+
+
